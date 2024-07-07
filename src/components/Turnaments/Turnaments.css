@@ -1,0 +1,92 @@
+.turnaments-container {
+  padding: 20px;
+}
+
+.turnaments-heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.slider-container {
+  padding: 0 20px; /* Add padding around the slider container */
+}
+
+.slider-item {
+  margin-right: 15px; /* Add margin between each slider item */
+}
+
+.tournament-card {
+  width: 100%;
+  max-width: 940px;
+  height: auto; /* Let height adjust based on content */
+  margin: 0 auto 20px auto; /* Center and add margins between cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ /* Ensure the background is white */
+  padding: 15px;
+ 
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.tournament-img {
+  max-height: 90vh; /* Set a maximum height */
+  width: 100%; /* Ensure width takes up full container */
+  object-fit: contain; /* Ensure the full image is visible */
+  height: 80vh;
+  padding: 10px; /* Padding for better visual separation */
+
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; /* Padding for better spacing */
+}
+
+.hidden-mobile {
+  display: block; /* Show on larger screens */
+}
+
+.hidden-desktop {
+  display: none; /* Hide on smaller screens */
+}
+
+@media (max-width: 768px) {
+  .slider-item {
+    margin-right: 0; /* Remove margin between slider items */
+  }
+
+  .tournament-card {
+    height: auto; /* Let height adjust based on content */
+    max-width: 100%; /* Ensure the card takes full width */
+    margin: 0 auto 20px auto; /* Center and add margin */
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+
+  .tournament-img {
+    max-height: 30vh; /* Set a fixed height for the image */
+  }
+
+  .hidden-mobile {
+    display: none; /* Hide on smaller screens */
+  }
+
+  .hidden-desktop {
+    display: block; /* Show on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+ .card-text{
+  display: none;
+ }
+ .slick-list{
+  height:30vh;
+  width: 100%;
+  margin-right: -2rem;
+ }
+ 
+}

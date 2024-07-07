@@ -1,0 +1,190 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Event Section Styles */
+.event-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4rem 0;
+  background: linear-gradient(to right, #0d2329, #272626);
+  color: #fff;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Text Column Styles */
+.text-column {
+  flex: 1.2; /* Increased flex value */
+  max-width: 400px; /* Adjust as needed */
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  transform: rotate(-40deg);
+  font-size: 600px;
+
+}
+/* Gallery Column Styles */
+.gallery-column {
+  flex: 2.8; /* Decreased flex value */
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Gallery Card Styles */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(22.33% - 25px);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+  width: calc(99% - 4px); /* Reduced width to ensure the border is visible */
+  height: calc(99% - 4px); /* Reduced height to ensure the border is visible */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 2px; /* Centered within the border */
+  background-color: white; /* Optional: Adds a white background for clarity */
+}
+
+.gallery-content {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Animated Border Effect */
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b, #1fa2ff, #12d8fa, #a6ffcb, #f0c27b, #ff7e5f, #feb47b);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: animated-border 10s linear infinite;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+@keyframes animated-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Random card heights */
+.gallery-card-0 { height: 170px; }
+.gallery-card-1 { height: 185px; }
+.gallery-card-2 { height: 230px; }
+.gallery-card-3 { height: 230px; }
+.gallery-card-4 { height: 250px; }
+.gallery-card-5 { height: 300px; }
+.gallery-card-6 { height: 250px; }
+.gallery-card-7 { height: 270px; }
+.gallery-card-8 { height: 230px; }
+.gallery-card-9 { height: 270px; }
+.gallery-card-10 { height: 230px; }
+.gallery-card-11 { height: 230px; }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .event-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .text-column {
+    max-width: 100%;
+    text-align: center;  
+    transform: rotate(0deg);
+  }
+
+  .gallery-column {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    gap: 10px;
+  }
+
+  .gallery-card {    width: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+  .gallery-card-4{
+  margin-top: -.5rem;
+  }
+  .gallery-card-5{
+   margin-top:-2rem;
+   margin-bottom: 1.5rem;
+    }
+  .gallery-card-6{
+    margin-top:-1rem;
+  }
+  
+}
+
+.gallery-card-1{
+  width: 260px;
+}
+
+.gallery-card-4{
+width: 150px;
+}
+.gallery-card-5{
+ margin-top:-5%;
+}
+.gallery-card-6{
+width: 300px;
+margin-top: -5%;
+}
+.gallery-card-7{
+width: 320px;
+margin-top: -3%;
+}
+.gallery-card-8{
+width: 240px;
+margin-top: -2.5%;
+}
+.gallery-card-9{
+ width: 200px;
+ margin-top: -3%;
+}
+.gallery-card-10{
+width: 250px;
+margin-top: -2.5%;
+}
+.gallery-card-11{
+width: 240px;
+margin-top: -2%;
+}

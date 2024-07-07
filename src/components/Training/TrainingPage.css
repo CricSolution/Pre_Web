@@ -1,0 +1,44 @@
+/* src/components/TrainingPage.css */
+
+.icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.section-container {
+  margin-bottom: 2rem;
+}
+
+.training-image {
+  width: 100%; /* Ensure the image fits within its container */
+  max-width: 460px; /* Increase the maximum width for the image */
+  height: 350px;
+  transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.perk-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+
+
+.training-page {
+  margin-bottom: 50px; /* Ensure there's enough space between training page content and footer */
+}
+
+.section-container {
+  margin-bottom: 30px; /* Spacing between sections */
+}
+
+.section-container img {
+  transition: transform 0.3s ease;
+}
+
+.section-container img:hover {
+  transform: scale(1.05);
+}
