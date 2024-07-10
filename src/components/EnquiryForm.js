@@ -66,26 +66,11 @@ const EnquiryFormModal = () => {
         return "Number of Umpires *";
     }
   };
-  const umpire=()=>{
-    return <>
-    </>
-  }
-  const score=()=>{
-    return <>
-    </>
-  }
-  const Commentator=()=>{
-    return <>
-    </>
-  }
-  const match=()=>{
-    return <>
-    </>
-  }
+  
 
   return (
     <>
-      <button className="" style={{backgroundColor:"inherit",border:"none",color:"white"}} onClick={handleShowModal}>
+      <button  style={{backgroundColor:"inherit",border:"none",color:"white"}} onClick={handleShowModal}>
         Register
       </button>
 

@@ -105,7 +105,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: numItems >= 3 ? 3 : numItems,
-    slidesToSlide: 3,
+    slidesToSlide: 2,
     partialVisibilityGutter: 30 
   },
   tablet: {

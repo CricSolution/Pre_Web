@@ -91,7 +91,7 @@ const Organizer = () => {
                 <Card.Text className="card-text">{content.text1}</Card.Text>
                 <Card.Text className="card-text">{content.text2}</Card.Text>
                 <Card.Text className="card-text">{content.text3}</Card.Text>
-                <Button href="#"><EnquiryForm /></Button>
+                <button className='org-button' href="#"><EnquiryForm /></button>
               </Card.Body>
             </Card>
           </div>

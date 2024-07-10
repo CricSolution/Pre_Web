@@ -42,11 +42,11 @@ export default function Profile() {
        
         <SwiperSlide>
     
-        <div class="team-box team-box1">
+        <div className="team-box team-box1">
          
-          <div class="team-name">
+          <div className="team-name">
           
-              <div class="team-content">
+              <div className="team-content">
                 <h2>Ankit Bajpai</h2>
                 <p>CEO & Founder</p>
                 
@@ -57,11 +57,11 @@ export default function Profile() {
         
         </SwiperSlide>
         <SwiperSlide>
-        <div class="team-box team-box2">
+        <div className="team-box team-box2">
          
-         <div class="team-name">
+         <div className="team-name">
          
-             <div class="team-content">
+             <div className="team-content">
                <h2>Abhishek Bhardwaj
                </h2>
                <p>COO & Co-Founder</p>
@@ -72,11 +72,11 @@ export default function Profile() {
        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div class="team-box team-box3">
+        <div className="team-box team-box3">
          
-         <div class="team-name">
+         <div className="team-name">
          
-             <div class="team-content">
+             <div className="team-content">
                <h2>Mayuri Yadav</h2>
                <p>CHRO
                </p>
@@ -87,11 +87,11 @@ export default function Profile() {
        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div class="team-box team-box4">
+        <div className="team-box team-box4">
          
-         <div class="team-name">
+         <div className="team-name">
          
-             <div class="team-content">
+             <div className="team-content">
                <h2>Bhavya Kumari</h2>
                <p>CTO</p>
                
@@ -101,11 +101,11 @@ export default function Profile() {
        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div class="team-box team-box5" >
+        <div className="team-box team-box5" >
          
-         <div class="team-name" >
+         <div className="team-name" >
          
-             <div class="team-content">
+             <div className="team-content">
                <h2>Bhoomi Bhardwaj</h2>
                <p>Director</p>
               
@@ -115,11 +115,11 @@ export default function Profile() {
        </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div class="team-box team-box6">
+        <div className="team-box team-box6">
          
-         <div class="team-name">
+         <div className="team-name">
          
-             <div class="team-content">
+             <div className="team-content">
                <h2>Abhishek Bajpai</h2>
                <p>Director
                </p>

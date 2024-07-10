@@ -10,9 +10,7 @@ const LandingPage = () => {
     <>
     <main className="main-content">
         <TrainingPage />
-        
       </main>
-   <Certificate/>
       </>
   );
 };

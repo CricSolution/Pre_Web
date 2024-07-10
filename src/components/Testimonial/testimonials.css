@@ -11,7 +11,7 @@ html {
   flex-direction: column;
   justify-content: center;
   height: 50vh;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .title {
@@ -129,7 +129,11 @@ html {
     display: block;
     text-align: center;
   }
-
+.testimonial-container{
+  height: 80vh;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+}
   .splide__arrow {
     font-size: 1.5rem;
   }

@@ -3,12 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBalanceScale, faChalkboardTeacher, faUserTie, faRunning, faCertificate } from '@fortawesome/free-solid-svg-icons';
 import './TrainingPage.css';
-import module1 from "../../assests/Traning/Module1.jpeg";
-import module2 from "../../assests/Traning/module2.jpeg";
-import module4 from "../../assests/Traning/module3.jpeg";
-import module3 from "../../assests/Traning/module4.jpeg";
+import module1 from "../../assests/Traning/module1.jpg";
+import module3 from "../../assests/Traning/module2.jfif";
+import module4 from "../../assests/Traning/module4.jfif";
+import module2 from "../../assests/Traning/module3.jfif";
 
-import certificate from "../../assests/Traning/certificate.jpeg";
+import certificate from "../../assests/Traning/cerificate.jfif";
+import certificate2 from "../../assests/Traning/Certificates.png";
 
 const sections = [
   {
@@ -77,6 +78,12 @@ const TrainingPage = () => {
           <p>Customized Rule Book for Umpiring</p>
           <p>1 Month Internship (With Stipend)</p>
         </ul>
+      </div>
+      <div className='certificate' >
+        <div>
+          <h1>Sample Certificate</h1>
+        </div>
+        <img src={certificate2}/>
       </div>
     </div>
   );

@@ -2,42 +2,39 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import Quote from '../../assests/blockquote.svg';
 import "./testimonials.css"
-import review1 from "../../assests/Review/review1.jfif"
-import review2 from "../../assests/Review/review2.jfif"
-import review3 from "../../assests/Review/review3.jfif"
-import review4 from "../../assests/Review/review4.jfif"
+import review1 from "../../assests/Review/dumy.jfif"
+
 
 const reviews = [
   {
     id: 1,
     image:review1,
-    name: 'Akash',
-    text: 'The team demonstrated a deep understanding of our requirements. They were able to capture the essence of our vision for the tournament and delivered an experience that exceeded our expectations',
+    name: 'Arun Sharma',
+    text: 'Taking Services from a long time and as an organizer its important for us to arrange everything on time in which Cricsolution making my life easier than before.',
   },
   {
     id: 2,
-    image:review2,
-    name: 'Punita',
-    text: 'The attention to detail in managing our cricket event was impressive. Every aspect, from the scheduling to the execution, was handled with precision and care. I highly recommend their services. This was very well organized corporate event.',
+    image:review1,
+    name: 'Nitesh Singh',
+    text: 'Impressed with the quality of balls they provided, their products and services both are awesome and above expectations.',
   },
   {
     id: 3,
-    image:review3,
-    name: 'Raju',
-    text: 'The umpire service was excellent. The umpires were highly responsive and fair, ensuring the matches were conducted smoothly and professionally.',
+    image:review1,
+    name: 'Ravishankar Reddy (Retailer)',
+    text: 'Good Quality White and Red balls at cheaper prices.',
   },
   {
     id: 4,
-    image:review4,
-    name: 'Palak',
-    text: 'I was extremely pleased with the quality of the cricket ground provided by your organization. The pitch was well-maintained and met all our standards, making it an ideal venue for our matches.',
+    image:review1,
+    name: 'Avinash Singh',
+    text: 'The knowledge and skills their umpires hold is appreciateable also the regularity of umpires. They are really improving the quality of tournaments with proper dresses, timing and focussing on minute details. Keep it up Cricsolution.',
   },
   {
     id: 5,
-    image:
-      'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    name: 'Raj',
-    text: "The product not only met but exceeded my expectations. It's clear that the team is dedicated to delivering high-quality work. I'm a satisfied customer.",
+    image:review1,
+    name: 'Venky',
+    text: "Cricsolution really help us in all perspective for playing as well as organizing, best service is that they always up for organizing new tournaments together and handle almost everything.",
   },
 ];
 const Testimonials = () => {

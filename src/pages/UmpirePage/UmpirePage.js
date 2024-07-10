@@ -30,7 +30,7 @@ const UmpirePage = () => {
               <Card.Text className="card-text">Join CricSolution's esteemed team of umpires and become an integral part of the game's integrity and fairness.</Card.Text>
               <Card.Text className="card-text">Register now to embark on a journey of professional growth, skill refinement, and unparalleled opportunities in the world of cricket officiating.</Card.Text>
               <Card.Text className="card-text">Whether you're a seasoned umpire or just starting your officiating career, CricSolution welcomes you to register and join our community of dedicated and respected officials.</Card.Text>
-              <Button  href="#"> <EnquiryForm /></Button>
+              <button className='org-button'  href="#"> <EnquiryForm /></button>
             </Card.Body>
           </Card>
         </div>

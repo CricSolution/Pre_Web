@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Navbar, Nav, Dropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../logo.webp';
 import SubMenu from './SubMenu';
 import './Navbar.css';
@@ -15,10 +15,10 @@ const App = () => {
   const [openMore, setOpenMore] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const isMobileDevice = useMediaQuery({ query: '(max-width: 767px)' });
-  const timerRef = useRef(null);
   const navbarRef = useRef(null);
   const [navbarHeight, setNavbarHeight] = useState(0);
-
+  const [expanded, setExpanded] = useState(false);
+  const [openNestedDropdown, setOpenNestedDropdown] = useState(false); 
   useEffect(() => {
     function updateSize() {
       setTimeout(() => {
@@ -32,11 +32,18 @@ const App = () => {
     updateSize();
     return () => window.removeEventListener('resize', updateSize);
   }, []);
+  const location = useLocation();
 
-  const closeDropdown = setOpen => {
-    if (isMobileDevice) {
-      setOpen(false);
-    }
+  useEffect(() => {
+    // Close the dropdown menu
+    setOpenMastery(false);
+  }, [location.pathname]); // This effect runs when the URL path changes
+
+  // Your existing component code...
+
+  const closeDropdown = (setOpen) => {
+    setOpen(false);
+    setOpenNestedDropdown(false);
   };
 
   const closeAll = () => {
@@ -46,23 +53,22 @@ const App = () => {
     setOpenMore(false);
   };
 
-  const handleMouseEnter = setOpen => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
+  const handleMouseEnter = (setOpen) => {
     closeAll();
     setOpen(true);
   };
 
-  const handleMouseLeave = setOpen => {
-    timerRef.current = setTimeout(() => {
-      setOpen(false);
-    }, 50);
+  const handleMouseLeave = (setOpen) => {
+    setOpen(false);
   };
 
-  const handleSearchChange = event => {
+  const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     // Add your search logic here
+  };
+  const handleSelect = (eventKey) => {
+    // Close the Navbar collapse when an option is selected
+    setExpanded(false);
   };
 
   return (
@@ -76,15 +82,15 @@ const App = () => {
                   <Navbar.Brand as={Link} to="/">
                     <img src={logo} alt="Company Logo" className="logo" />
                   </Navbar.Brand>
-                  <Form inline className="search-form">
+                  <Form inline="true" className="search-form">
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" value={searchTerm} onChange={handleSearchChange} />
                   </Form>
                 </div>
                 <div className="d-flex align-items-center menu-container">
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav>
-                      <Link to="/" className="custom-static-dropdown nav-link">Home</Link>
+                    <Nav >
+                    <Link to="/" className="custom-static-dropdown nav-link" onSelect={handleSelect}>Home</Link>
                       <Dropdown
                         onMouseEnter={() => handleMouseEnter(setOpenMastery)}
                         onMouseLeave={() => handleMouseLeave(setOpenMastery)}
@@ -95,11 +101,12 @@ const App = () => {
                           }
                         }}
                       >
+                        
                         <Nav.Link className="dropdown-header">
                           Mastery
                         </Nav.Link>
                         <Dropdown.Menu>
-                          <Link to="/landing" className="dropdown-item" onClick={() => closeDropdown(setOpenMastery)}>Training & Certification</Link>
+                          <Link to="/landing" className="dropdown-item"  onClick={() => closeDropdown(setOpenMastery)} >Training & Certification</Link>
                         </Dropdown.Menu>
                       </Dropdown>
                       <Dropdown
@@ -115,13 +122,13 @@ const App = () => {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                           <SubMenu title="For Umpires" closeParentMenu={() => setOpenServices(false)}>
-                            <Link to="/umpire" className="dropdown-item">Register and Grow</Link>
+                            <Link to="/umpire" className="dropdown-item" onClick={() => closeDropdown(setOpenServices)}>Register and Grow</Link>
                           </SubMenu>
                           <SubMenu title="For Organizers" closeParentMenu={() => setOpenServices(false)}>
-                            <Link to="/hire-umpire" className="dropdown-item">Hire Umpires</Link>
-                            <Link to="/hire-score" className="dropdown-item">Hire Scorers</Link>
-                            <Link to="/hire-comentator" className="dropdown-item">Hire Commentator</Link>
-                            <Link to="/match-with-us" className="dropdown-item">Organize match with us</Link>
+                            <Link to="/hire-umpire" className="dropdown-item" onClick={() => closeDropdown(setOpenServices)}>Hire Umpires</Link>
+                            <Link to="/hire-score" className="dropdown-item" onClick={() => closeDropdown(setOpenServices)}>Hire Scorers</Link>
+                            <Link to="/hire-comentator" className="dropdown-item" onClick={() => closeDropdown(setOpenServices)}>Hire Commentator</Link>
+                            <Link to="/match-with-us" className="dropdown-item" onClick={() => closeDropdown(setOpenServices)}>Organize match with us</Link>
                           </SubMenu>
                         </Dropdown.Menu>
                       </Dropdown>
@@ -144,7 +151,7 @@ const App = () => {
                           <Link to="/accesories" className="dropdown-item" onClick={() => closeDropdown(setOpenCricketMarket)}>Accessories</Link>
                         </Dropdown.Menu>
                       </Dropdown>
-                      <Link to="/about-us" className="custom-static-dropdown nav-link">About Us</Link>
+                      <Link to="/about-us" className="custom-static-dropdown nav-link" onClick={closeAll}>About Us</Link>
                       <Dropdown
                         onMouseEnter={() => handleMouseEnter(setOpenMore)}
                         onMouseLeave={() => handleMouseLeave(setOpenMore)}
@@ -167,13 +174,16 @@ const App = () => {
                       
                       <Button
                         variant="outline-light"
-                        className="ml-4 d-none d-lg-block" style={{marginLeft:"25px"}}// Added ml-4 for left margin
+                        className="ml-4 d-none d-lg-block"
+                        style={{ marginLeft: "25px" }} // Added ml-4 for left margin
                       >
-                     
-                     <Link to='https://wa.me/+918368949728' style={{color:"inherit",background:"inherit",textDecoration:"none"}}> Contact us: +91 83689 49728</Link>
+                        <Link to="https://wa.me/+918368949728" style={{ color: "inherit", background: "inherit", textDecoration: "none" }}>
+                          Contact us: +91 83689 49728
+                        </Link>
                       </Button>
                     </Nav>
                   </Navbar.Collapse>
+                 
                 </div>
               </div>
             </Navbar>
