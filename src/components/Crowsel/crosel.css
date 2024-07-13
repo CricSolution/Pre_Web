@@ -1,0 +1,99 @@
+/* crosel.css */
+
+/* Carousel image adjustments */
+.crosel-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Full height for carousel items */
+.carousel-item {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    position: relative; /* Required for positioning */
+    overflow: hidden;
+}
+
+.image {
+    height: 100vh; /* Full height for images */
+    width: 100vw; /* Full width for images */
+    object-fit: cover; /* Cover entire area */
+    opacity: 0.7; /* Slight transparency */
+}
+
+/* Center the caption using flexbox */
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 100%; /* Full width for responsive centering */
+    max-width: 600px; /* Limit width for better presentation */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center text horizontally */
+    justify-content: center; /* Center text vertically */
+    padding: 0 15px; /* Padding for responsive layout */
+}
+
+.carousel-caption .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 90%;
+}
+
+.carousel-caption h1,
+.carousel-caption p {
+    text-align: center;
+    width: 100%; /* Ensure full width for better centering */
+    margin: 0; /* Remove default margins */
+}
+
+.hero-button {
+    margin-top: 7px; /* Space between text and button */
+}
+
+/* For smaller screens, adjust text */
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .hero-button {
+        font-size: 0.9rem; /* Smaller button font */
+        padding: 10px 20px; /* Adjust padding */
+    }
+    .carousel-caption .container {
+        margin-left: 35%;
+        margin-top: 33%;
+    }
+    
+}
+/* For smaller screens, adjust text */
+@media (max-width: 468px) {
+    
+  .image{
+    height:70vh;
+  }
+    .crosel-image{
+        height: 70vh;
+    }
+    .crousel-text{
+            font-size: 1.5rem;
+    }
+    .carousel-caption .container {
+        margin-left: 9rem;
+        margin-top: -1%;
+    }
+}
