@@ -1,0 +1,128 @@
+/* Adjust the container size */
+.team-box {
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: none; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    /* box-shadow: 0 4px 8px rgba(205, 14, 14, 0.1);  */
+        transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.team-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.team-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background: rgba(172, 13, 13, 0.5); */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.team-box:hover::before {
+    opacity: 1;
+}
+
+.team-content {
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7); 
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: relative; /* Ensure it sits above overlay */
+    z-index: 1;
+}
+
+.team-box:hover .team-content {
+    opacity: 1;
+}
+
+.team-content h2 {
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.team-content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-box1 {
+    background-image: url(../../assests/ankit.png);
+}
+
+.team-box2 {
+    background-image: url(../../assests/abhi.png);
+}
+
+.team-box3 {
+    background-image: url(../../assests/Mayuri.jpg);
+}
+
+.team-box4 {
+    background-image: url(../../assests/bhavya2.jpeg);
+}
+
+.team-box5 {
+    background-image: url(../../assests/Bhoomi.jpg);
+}
+
+.team-box6 {
+    background-image: url(../../assests/abhiB.jpg);
+}
+
+/* General styles for responsiveness */
+@media (max-width: 768px) {
+    .team-box {
+        width: 200px;
+        height: 300px;
+        margin-left: 50px;
+    }
+
+   
+
+    .team-content h2 {
+        font-size: 14px;
+    }
+
+    .team-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-box {
+        width: 220px;
+        height: 270px;
+        margin-left:40px;
+    }
+
+    .team-content h2 {
+        font-size: 12px;
+    }
+
+    .team-content p {
+        font-size: 10px;
+    }
+}
