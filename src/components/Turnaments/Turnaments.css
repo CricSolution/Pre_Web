@@ -1,0 +1,130 @@
+.turnaments-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+  align-items: center; /* Center the container vertically */
+  min-height: 60vh; /* Ensure the container takes full viewport height */
+  box-sizing: border-box; 
+  margin-top: 6%;
+}
+
+.turnaments-heading {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.slider-container {
+  padding: 0 20px; /* Add padding around the slider container */
+  width: 100%; /* Ensure full width */
+  margin-top: -8%;
+}
+
+
+
+.tournament-card {
+  width: 100%;
+  max-width: 1000px;
+  height: 100vh; /* Ensure the card takes full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* Ensure the background is white */
+  padding: 10px; /* Adjust padding for better spacing */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-sizing: border-box;
+}
+
+.tournament-img {
+  height: 90vh; /* Set a larger height */
+  width: 100%; /* Ensure width takes up full container */
+  object-fit: contain; /* Cover the container without being cut off */
+  padding: 10px; /* Padding for better visual separation */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; /* Padding for better spacing */
+}
+
+.hidden-mobile {
+  display: block; /* Show on larger screens */
+}
+
+.hidden-desktop {
+  display: none; /* Hide on smaller screens */
+}
+
+@media (max-width: 768px) {
+  .slider-item {
+    margin-right: 0; /* Remove margin between slider items */
+  }
+
+  .tournament-card {
+    height: auto; /* Let height adjust based on content */
+    max-width: 100%; /* Ensure the card takes full width */
+    margin: 0 auto 20px auto; /* Center and add margin */
+    padding: 10px; /* Adjust padding for better spacing */
+  }
+  .rounded-start{
+    width: 100%;
+  }
+
+  .tournament-img {
+    height: 50vh; /* Set a fixed height for the image */
+  }
+
+  .hidden-mobile {
+    display: none; /* Hide on smaller screens */
+  }
+
+  .hidden-desktop {
+    display: block; /* Show on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-text {
+    display: none;
+  }
+.rounded-start{
+  width: 100%;
+}
+  .slick-list {
+    height: 30vh;
+    width: 100%;
+    margin-right: -2rem;
+  }
+
+  .tournament-card {
+    padding: 5px; /* Less padding for smaller screens */
+  }
+
+  .tournament-img {
+    height: 30vh; /* Smaller image height for mobile screens */
+  }
+}
+
+@media (max-width: 315px) {
+  .card-text {
+    display: none;
+  }
+.rounded-start{
+  width: 100%;
+}
+  .slick-list {
+    height: 30vh;
+    width: 100%;
+    margin-right: -2rem;
+  }
+
+  .tournament-card {
+    padding: 5px; /* Less padding for smaller screens */
+  }
+
+  .tournament-img {
+    height: 30vh; /* Smaller image height for mobile screens */
+  }
+}
